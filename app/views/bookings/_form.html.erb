@@ -1,0 +1,40 @@
+<div class="login-window-text">
+  <%= form_for booking do |form| %>
+    <div class="field">
+      <%= form.label "Your cat name:" %>
+      <%= form.text_field :name, class: 'login-input'%>
+    </div>
+
+    <div class="field">
+      <%= form.label "Day of funeral:"%><br>
+      <%= form.datetime_local_field :start_time, options = {
+        value: Date.parse((params[:start_date]) || Date.today.to_s).try(:strftime, '%Y-%m-%dT%H:%M:%S'),
+        step: "7200",
+        class: "login-input "
+        }%>
+    </div>
+
+    <div class="field">
+      <%= form.label "Description:" %>
+      <%= form.text_field :description, class: 'login-input'%>
+    </div>
+
+    <div class="actions">
+      <%= form.submit "Add" , :class => 'login-button' %>
+    </div>
+  <% end %>
+  <br>
+</div>
+<div class="login-window-error">
+  <% if booking.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(booking.errors.count, "error") %> prohibited this booking from being saved:</h2>
+
+      <ul>
+      <% booking.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+</div>

@@ -1,0 +1,67 @@
+AllCops:
+  DisplayCopNames: true
+  Exclude:
+    - bin/**/*
+    - config/routes.rb
+    - config/spring.rb
+    - db/**/*
+    - spec/*_helper.rb
+    - vendor/**/*
+    - Gemfile
+    - Rakefile
+    - config.ru
+
+Rails:
+  Enabled: true
+
+Metrics/LineLength:
+  Max: 120
+  IgnoredPatterns: ['\A#']
+
+Metrics/AbcSize:
+  Enabled: false
+
+Metrics/MethodLength:
+  Enabled: false
+
+Metrics/BlockLength:
+  Enabled: false
+
+Metrics/ClassLength:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Style/StringLiterals:
+  EnforcedStyle: double_quotes
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Layout/AlignParameters:
+  EnforcedStyle: with_fixed_indentation
+
+Style/RaiseArgs:
+  Enabled: false
+
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+Layout/MultilineMethodCallIndentation:
+  EnforcedStyle: indented
+
+Naming/PredicateName:
+  Enabled: false
+
+Style/SymbolProc:
+  Enabled: false
+
+Rails/Delegate:
+  Enabled: false
+
+Style/SymbolArray:
+  Enabled: false
+
+Rails/HasManyOrHasOneDependent:
+  Enabled: false

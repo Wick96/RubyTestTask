@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Cemetery</title>
+    <link href="https://fonts.googleapis.com/css?family=Exo+2" rel="stylesheet">
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <div id="header">
+      <h1>
+        <% if user_signed_in? %>
+          Welcome <%= current_user.email %>! |
+          <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+        <%else%>
+          Welcome to cat cemetery!
+        <% end %>
+      </h1>
+    </div>
+    <%= yield %>
+  </body>
+</html>

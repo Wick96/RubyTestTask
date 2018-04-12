@@ -1,0 +1,33 @@
+<div id="page">
+      <div class="login-window">
+        <div class="login-window-title">
+          <h2>Event <%=@booking.name%></h2>
+        </div>
+        <div class="login-window-text">
+          <b>Cat name: </b><%= @booking.name %><br>
+          <b>Date: </b><%= @booking.start_time %><br><br>
+          <b>Description: </b><br>
+          <%= @booking.description %>
+          <br><br>
+          <b>Participants:</b><br>
+          <% @booking.attendances.each do |attendance| %>
+            <%= attendance.user.email %><br>
+          <% end %>
+          <br>
+          <% if @user_attendance %>
+            <%= link_to "Remove attend", booking_attendance_path(@booking, @user_attendance), method: :delete %>
+          <% else %>
+            <%= form_with(model: [ @booking, @booking.attendances.build ], local: true) do |form| %>
+              <div class="actions">
+                <%= form.submit "Attend" , :class => 'login-button' %>
+              </div>
+            <% end %>
+          <% end %>
+        </div>
+        <div class="login-window-clear"></clear>
+        <div class="login-window-footer">
+          <p class="notice"><%= notice %></p>
+          <p class="alert"><%= alert %></p>
+        </div>
+      </div>
+</div>

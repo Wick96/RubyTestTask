@@ -1,0 +1,46 @@
+<div id="page">
+      <div class="login-window">
+        <div class="login-window-title">
+          <h2>Sign up</h2>
+        </div>
+        <div class="login-window-text">
+          <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+
+            <div class="field">
+              <%= f.label :email %>
+              <%= f.email_field :email, autofocus: true, autocomplete: "email"  , :class => 'login-input'%>
+            </div>
+
+            <div class="field">
+              <%= f.label :password %>
+              <% if @minimum_password_length %>
+              <em>(<%= @minimum_password_length %> characters minimum)</em>
+              <% end %>
+              <%= f.password_field :password, autocomplete: "off"  , :class => 'login-input'%>
+            </div>
+
+            <div class="field">
+              <%= f.label :password_confirmation %>
+              <%= f.password_field :password_confirmation, autocomplete: "off"  , :class => 'login-input'%>
+            </div>
+
+            <div class="actions">
+              <%= f.submit "Sign up"  , :class => 'login-button'  %>
+            </div>
+          <% end %>
+          <br>
+        </div>
+        <div class="login-window-error">
+          <%= devise_error_messages! %>
+        </div>
+        <div class="login-window-register">
+          Already have account? <br>
+          <%= link_to "Log in now!", user_session_path %>
+        </div>
+        <div class="login-window-clear"></div>
+        <div class="login-window-footer">
+          <p class="notice"><%= notice %></p>
+          <p class="alert"><%= alert %></p>
+        </div>
+      </div>
+</div>

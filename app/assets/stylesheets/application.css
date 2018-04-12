@@ -1,0 +1,222 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+*{
+  margin: 0;
+  font-family: 'Exo 2', sans-serif;
+  color: rgb(52, 54, 56);
+}
+#notice{
+  display: block;
+  width: 500px;
+  margin: 0 auto;
+  margin-top:20px;
+  text-align: center;
+}
+#page{
+  margin: 0 auto;
+}
+#header{
+  margin: 0;
+  margin-bottom: 50px;
+  height: 100px;
+  background-color: rgb(130, 213, 255);
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
+#header h1{
+  font-size: 35px;
+}
+.login-window{
+  margin: 0 auto;
+  width: 400px;
+
+  background-color: rgb(201, 237, 255);
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px 0px black;
+  position: relative;
+}
+.login-window-text{
+  padding: 10px;
+}
+.login-window-title{
+  background-color:  rgb(130, 213, 255);
+  width: 490;
+  height: 40px;
+  display:flex;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+  align-items: center;
+  padding-left: 10px;
+  border-bottom: solid #adafb2 1px;
+}
+.login-window-footer{
+  width: 400px;
+  position: absolute;
+  bottom: 0px;
+  background-color:  rgb(130, 213, 255);
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  text-align: center;
+  border-top: solid #adafb2 1px;
+}
+.alert{
+  padding-top:3px;
+  padding-bottom: 3px;
+}
+.field{
+  padding-left: 10px;
+}
+.login-input{
+  width: 340px;
+  height: 25px;
+  padding-left: 10px;
+  margin-top: 3px;
+  margin-bottom: 6px;
+
+}
+.login-button{
+  -webkit-appearance: none;
+  float:right;
+  margin-right: 15px;
+  width: 150px;
+  height: 40px;
+  background-color:  rgb(130, 213, 255);
+  font-size: 18px;
+}
+.login-window-register{
+  margin-top: 40px;
+  clear: both;
+  height: 80px;
+  background-color:  rgb(130, 213, 255);
+  text-align: center;
+  color: white;
+  font-size: 25px;
+  padding-top: 20px;
+  border-top: solid #adafb2 1px;
+  border-bottom: solid #adafb2 1px;
+}
+
+.login-window-error{
+  margin-top: 40px;
+  clear: both;
+}
+
+.login-window-error h2{
+  font-size: 16px;
+  padding-left: 15px;
+}
+
+.login-window-clear{
+  clear: both;
+  height: 40px;
+}
+.table{
+  border-collapse: collapse;
+  width: 840px;
+}
+.table td{
+    border: 1px solid #ddd;
+    padding: 8px;
+    font-size: 13px;
+    vertical-align: top;
+}
+
+
+.table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: rgb(168, 171, 175);
+    color: black;
+}
+
+.simple-calendar{
+  margin: 0 auto;
+  width: 840px;
+   box-shadow: 0px 0px 10px 0px black;
+   border-radius: 5px;
+ }
+.calendar-heading{
+  background-color: rgb(168, 171, 175);
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+  text-align: center;
+  height: 40px;
+  padding-top: 10px;
+  color:white;
+  font-size: 25px;
+  border-bottom: solid #adafb2 1px;
+}
+.calendar-heading a:hover, .calendar-heading a:visited , .calendar-heading a{
+   color: white;
+   text-decoration: none;
+}
+
+  .day {
+    width: 120px;
+    height: 70px;
+    background-color: #e9ffe8;
+  }
+  .day a{
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+  }
+
+  .wday-0 { background-color: #f4cdcd; opacity: 0.5}
+  .wday-1 {}
+  .wday-2 {}
+  .wday-3 {}
+  .wday-4 {}
+  .wday-5 {}
+  .wday-6 { background-color: #f4cdcd;  opacity: 0.5}
+
+  .today {}
+  .past { background-color: #f4cdcd;  opacity: 0.5}
+  .future {}
+
+  .start-date {}
+
+  .prev-month {background-color: #c4c4c4; opacity: 0.5}
+  .next-month {background-color: #c4c4c4; opacity: 0.5}
+
+  .has-events {background-color: #9ee1ff;}
+  .day  a{text-decoration:none;}
+  .past a{pointer-events: none; text-decoration:none;}
+  .has-events a{text-decoration:none;}
+  .wday-6 a {pointer-events: none; text-decoration:none;}
+  .wday-0 a {pointer-events: none; text-decoration:none;}
+  .next-month a {pointer-events: none; text-decoration:none;}
+  .prev-month a {pointer-events: none; text-decoration:none;}
+  .disabled{
+    pointer-events: none;
+    cursor: not-allowed;
+  }
+  .current-month:not(.past):not(.wday-0):not(.wday-6):hover {background-color: rgb(130, 213, 255)}
+  .hr1{
+    border: 0;
+    height: 1px;
+    margin: 5px;
+    background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0), rgb(52, 54, 56),  rgba(0, 0, 0, 0));
+    background-image: -moz-linear-gradient(left, rgba(0, 0, 0, 0), rgb(52, 54, 56),  rgba(0, 0, 0, 0));
+    background-image: -ms-linear-gradient(left, rgba(0, 0, 0, 0), rgb(52, 54, 56),  rgba(0, 0, 0, 0));
+    background-image: -o-linear-gradient(left, rgba(0, 0, 0, 0), rgb(52, 54, 56),  rgba(0, 0, 0, 0));
+  }
+  .showE:hover{
+    color:white !important;
+  }

@@ -1,0 +1,26 @@
+<div id="page">
+    <p>
+      <%= month_calendar events: @bookings do |date, booking| %>
+        <%= link_to new_booking_path(start_date: date) do %>
+          <%= date.day %>
+          <% @weather.each do |w| -%>
+            <% if w.date == date.to_s + " 12:00:00" %>
+               || <%=w.temperature%> °C<br>
+              <%=w.description%>
+              <hr class="hr1">
+              <% break%>
+            <% end %>
+          <% end %>
+        <% end %>
+        <% booking.each do |b| %>
+          <div>
+            <%= link_to booking_path(b) do %>
+              <b class="showE"><%= b.name + " | " + b.start_time.to_s(:time) %></b><br>
+            <% end %>
+            <hr class="hr1">
+          </div>
+        <% end %>
+      <% end %>
+      <div id="notice"><%= notice %></div>
+    </p>
+</div>

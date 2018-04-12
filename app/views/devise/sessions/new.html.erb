@@ -1,0 +1,41 @@
+<div id="page">
+      <div class="login-window">
+        <div class="login-window-title">
+          <h2>Log in</h2>
+        </div>
+        <div class="login-window-text">
+          <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+            <div class="field">
+              <%= f.label "E-mail:" %><br />
+              <%= f.email_field :email, autofocus: true, autocomplete: "email"  , :class => 'login-input' %>
+            </div>
+
+            <div class="field">
+              <%= f.label "Password:" %><br />
+              <%= f.password_field :password, autocomplete: "off"  , :class => 'login-input'  %>
+            </div>
+
+            <% if devise_mapping.rememberable? -%>
+              <div class="field">
+                <%= f.check_box :remember_me %>
+                <%= f.label :remember_me %>
+              </div>
+            <% end -%>
+
+            <div class="actions">
+              <%= f.submit "Log in" , :class => 'login-button'  %>
+            </div>
+          <% end %>
+          <br>
+        </div>
+        <div class="login-window-register">
+          New here? <br>
+          <%= link_to "Sign up", new_user_registration_path %>
+        </div>
+        <div class="login-window-clear"></clear>
+        <div class="login-window-footer">
+          <p class="notice"><%= notice %></p>
+          <p class="alert"><%= alert %></p>
+        </div>
+      </div>
+</div>
