@@ -14,9 +14,17 @@ namespace :deploy do
     #
   end
 
-  after :finishing, :notify do
-    execute 'sudo service sidekiq restart'
+  after :finishing, :notify, "swift:swift" do
   end
+end
+
+namespace :swift do
+    desc 'Swift config'
+    task :swift do
+      on roles(:web) do
+          execute :service, 'sidekiq restart'
+      end
+    end
 end
 
 # Default branch is :master
