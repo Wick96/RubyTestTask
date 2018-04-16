@@ -15,7 +15,7 @@ namespace :deploy do
   end
 
   after :finishing, :notify do
-    execute "sudo service sidekiq restart"
+    execute 'sudo service sidekiq restart'
   end
 end
 
