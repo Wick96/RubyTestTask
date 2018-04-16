@@ -11,6 +11,7 @@ class BookingsController < ApplicationController
     @bookings = Booking.where("start_time > ? and start_time < ?", start_date, end_date)
     @weather = WeatherReport.where("date > ? and date < ?", start_date, end_date)
   end
+
   def show
     @booking = Booking.includes(attendances: :user).find(params[:id])
     @user_attendance = @booking.attendances.find_by(user: current_user)
@@ -45,6 +46,6 @@ class BookingsController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def booking_params
-    params.require(:booking).permit(:name, :start_time, :description)
+    params.require(:booking).permit(:name, :start_time, :description, :paid)
   end
 end

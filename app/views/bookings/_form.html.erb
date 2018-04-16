@@ -18,7 +18,9 @@
       <%= form.label "Description:" %>
       <%= form.text_field :description, class: 'login-input'%>
     </div>
-
+    <div class="field">
+      <%= form.hidden_field :paid, value: "false", class: 'login-input'%>
+    </div>
     <div class="actions">
       <%= form.submit "Add" , :class => 'login-button' %>
     </div>

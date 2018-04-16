@@ -24,6 +24,34 @@
             <% end %>
           <% end %>
         </div>
+        <div class="login-window-register">
+          <% if @booking.paid == "true" %>
+            Already paid!
+          <% elsif  @booking.paid == "onhold"%>
+            Waiting payment to process<br>
+            <img src="http://gifimage.net/wp-content/uploads/2017/08/loading-gif-transparent-10.gif" height="30">
+            <META HTTP-EQUIV="refresh" CONTENT="3">
+          <% else %>
+            <%= form_tag booking_charge_path(@booking), {method: :post} do %>
+                <article>
+                  <% if flash[:error].present? %>
+                    <div id="error_explanation">
+                      <p><%= flash[:error] %></p>
+                    </div>
+                  <% end %>
+                  <label class="amount">
+                    <span>Booking is not paid yet!</span>
+                  </label>
+                </article>
+
+                <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                        data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+                        data-description="Booking payment for <%=@booking.name%>"
+                        data-amount="1000"
+                        data-locale="auto"></script>
+            <% end %>
+          <% end %>
+        </div>
         <div class="login-window-clear"></clear>
         <div class="login-window-footer">
           <p class="notice"><%= notice %></p>
@@ -31,3 +59,5 @@
         </div>
       </div>
 </div>
+
+

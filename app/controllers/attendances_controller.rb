@@ -4,7 +4,7 @@ class AttendancesController < ApplicationController
     @attendance = Attendance.find_or_initialize_by(
       booking_id: params[:booking_id],
       user_id: current_user.id
-      )
+    )
     if @attendance.save
       AttendanceMailer.with(user: current_user, booking: @booking).attendance_email.deliver_later
       flash[:notice] = "You successfully attendance to this event!"
