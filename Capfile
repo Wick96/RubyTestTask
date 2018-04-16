@@ -6,6 +6,7 @@ require "capistrano/deploy"
 
 require 'capistrano/rails'
 require 'capistrano/passenger'
+require 'capistrano/rails/console'
 
 require 'capistrano/rbenv'
 set :rbenv_type, :user
