@@ -8,7 +8,6 @@ require 'capistrano/rails'
 require 'capistrano/passenger'
 require 'capistrano/rails/console'
 require 'capistrano/sidekiq'
-require 'capistrano/sidekiq/monit'
 
 require 'capistrano/rbenv'
 set :rbenv_type, :user
