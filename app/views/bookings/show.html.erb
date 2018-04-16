@@ -48,7 +48,9 @@
                         data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
                         data-description="Booking payment for <%=@booking.name%>"
                         data-amount="1000"
-                        data-locale="auto"></script>
+                        data-locale="auto">
+                        Stripe.setPublishableKey('pk_test_FjSWfxkVf20E4x4It0mhp2SM');
+                        </script>
             <% end %>
           <% end %>
         </div>
