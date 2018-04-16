@@ -53,6 +53,7 @@ gem 'capistrano-passenger', '~> 0.2.0'
 gem 'capistrano-rbenv', '~> 2.1'
 gem 'capistrano-rails-console', require: false
 
+gem 'mailgun-ruby', '~>1.1.6'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
