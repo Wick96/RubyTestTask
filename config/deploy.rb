@@ -9,6 +9,16 @@ set :deploy_to, '/home/deploy/cat_cemetery'
 append :linked_files, "config/database.yml", "config/secrets.yml", ".env"
 append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "vendor/bundle", "public/system", "public/uploads"
 
+namespace :deploy do
+  before :starting, :ensure_user do
+    #
+  end
+
+  after :finishing, :notify do
+    execute "sudo service sidekiq restart"
+  end
+end
+
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
