@@ -10,17 +10,14 @@ append :linked_files, "config/database.yml", "config/secrets.yml", ".env"
 append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "vendor/bundle", "public/system", "public/uploads"
 
 namespace :deploy do
-  before :starting, :ensure_user do
-    #
-  end
+  before :starting, :ensure_user
 
-  after :finishing, :notify, "swift:swift" do
-  end
+  after :finishing, :notify, "sidekiq:restart"
 end
 
-namespace :swift do
-    desc 'Swift config'
-    task :swift do
+namespace :sidekiq do
+    desc 'sidekiq restart'
+    task :restart do
       on roles(:web) do
           execute :service, 'sidekiq restart'
       end
