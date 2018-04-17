@@ -9,7 +9,7 @@ set :deploy_to, '/home/deploy/cat_cemetery'
 append :linked_files, "config/database.yml", "config/secrets.yml", ".env"
 append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "vendor/bundle", "public/system", "public/uploads"
 
-set :systemd_unit, -> { "#{fetch :application}.target" }
+set :systemd_unit, -> { "sidekiq.service" }
 set :systemd_use_sudo, true
 set :systemd_roles, %w(app)
 
