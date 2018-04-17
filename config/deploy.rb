@@ -10,9 +10,7 @@ append :linked_files, "config/database.yml", "config/secrets.yml", ".env"
 append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "vendor/bundle", "public/system", "public/uploads"
 
 namespace :deploy do
-  before :starting, :ensure_user
-
-  after :finishing, :notify, "sidekiq:restart"
+  after :finishing, "sidekiq:restart"
 end
 
 namespace :sidekiq do
