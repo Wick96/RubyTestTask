@@ -41,8 +41,6 @@ gem 'clockwork', require: false
 
 gem 'pg'
 
-gem 'sqlite3'
-
 gem 'redis'
 
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'

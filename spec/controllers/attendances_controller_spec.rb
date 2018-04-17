@@ -1,10 +1,15 @@
 require "rails_helper"
 
 RSpec.describe AttendancesController, type: :controller do
-  describe "GET #new" do
-    it "returns http success" do
-      get :new
-      expect(response).to have_http_status(:success)
-    end
+  let(:user) do
+    User.create(email: "test@example.com", password: "password", password_confirmation: "password")
   end
+
+  #describe "GET #new" do
+  #  it "returns http success" do
+  #    sign_in user
+  #    get :create
+  #    expect(response).to have_http_status(:success)
+  #  end
+  #end
 end
